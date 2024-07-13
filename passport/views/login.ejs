@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+
+        <title>Login</title>
+        <meta name="description" content="DESCRIPTION" />
+
+        <link href="./style.css" type="text/css" rel="stylesheet" />
+
+        <script defer src="./script.js"></script>
+        <style>
+            nav {
+                position: fixed;
+                width: 100%;
+                top: 0;
+                left: 0;
+                height: 100px;
+                background: #ff5353;
+                display: flex;
+                justify-content: flex-start;
+                gap: 15px;
+                align-items: center;
+            }
+            nav ul {
+                display: flex;
+                justify-content: flex-start;
+                gap: 15px;
+                align-items: center;
+                list-style-type: none;
+            }
+            nav ul a {
+                color: #fff;
+                text-decoration: none;
+                text-transform: uppercase;
+                border: 2px solid #ff9393;
+                padding: 10px;
+                border-radius: 10px;
+            }
+            nav ul a:hover {
+                background: #ff9393;
+            }
+            header,
+            main {
+                position: relative;
+                top: 120px;
+            }
+            main a:first-child {
+                background: #ff5353;
+                border-radius: 5px;
+                padding: 10px;
+                display: block;
+                width: 100px;
+                margin: 10px;
+                color: #fff;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+            }
+            main a:last-child {
+                background: #535eff;
+                border-radius: 5px;
+                padding: 10px;
+                display: block;
+                width: 100px;
+                margin: 10px;
+                color: #fff;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <% if(user){ %>
+                <li><a href="/auth/logout">Logout</a></li>
+                <% } else { %>
+                <li><a href="/auth/login">Login</a></li>
+                <% } %>
+                <li><a href="/">Home page</a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+        </nav>
+        <header>
+            <h1>Login Page</h1>
+        </header>
+        <main>
+            <a href="/auth/google">Google+</a>
+            <a href="">Facebook</a>
+        </main>
+    </body>
+</html>
